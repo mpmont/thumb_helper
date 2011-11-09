@@ -53,11 +53,19 @@ thumb_name -> The final name of the thumb;
 I made this return in case someone needed to sent some of these values to the database for example.
 
 
+**USING REMOTE FILE:**
+
+For that insted of passing the array from image upload you can just pass the path to the file (including the file).
+
+example:
+
+`create_thumb('./public/images/myimage.jpg', '100', '150');`
+
 ***
 
 **CHANGELOG**
 
-**version 1.0**
+**version 1.0.1**
 
 * Resize image after upload with image data;
 
@@ -68,7 +76,5 @@ I made this return in case someone needed to sent some of these values to the da
 ***
 
 **FUTURE FEATURES**
-
-* Create thumbnails for existing image on server;
 
 * Pass a destination folder;

@@ -9,7 +9,8 @@
  * @subpackage	Helpers
  * @category	Helpers
  * @author		Marco Monteiro
- * @link		
+ * @link		www.marcomonteiro.net
+ * @version 	1.0.1
  */
 
 // ------------------------------------------------------------------------
@@ -18,30 +19,48 @@
  * Create THUMB
  *
  * @access	public
- * @param	array	array of data for the THUMB (just send the image data from upload)
- * @param	string	width px => required
- * @param	string	heigh px => optional (if set maintain_ratio = FALSE)
- * @return	string  Filename
+ * @param	array || string		array of data for the THUMB (just send the image data from upload) || pass the path with filename
+ * @param	string				width px => required
+ * @param	string				heigh px => optional (if set maintain_ratio = FALSE)
+ * @return	string  			Filename
  */
  
 if ( ! function_exists('thumb_helper'))
 {
-	function create_thumb( $data = array(), $thumb_width = '', $thumb_height = '')
+	function create_thumb( $data = array() , $thumb_width = '', $thumb_height = '' )
 	{
-		
-		if ($data['file_name'] == '' OR $data['full_path'] == '' OR $data['is_image'] == FALSE OR $thumb_width == '')
-		{
-			return FALSE;
-		}
-		if ( ! @is_dir($data['file_path']))
-		{
-			return FALSE;
-		}
-		if ( ! is_writable($data['file_path']))
-		{
-			return FALSE;
-		}
 
+		if( is_array($data) )
+		{	
+			if ( $data['file_name'] == '' OR $data['full_path'] == '' OR $data['is_image'] == FALSE OR $thumb_width == '' )
+			{
+				return FALSE;
+			}
+			if ( ! @is_dir($data['file_path']) )
+			{
+				return FALSE;
+			}
+			if ( ! is_writable($data['file_path']) )
+			{
+				return FALSE;
+			}
+		}
+		else
+		{
+			if( ! is_file($data) )
+			{
+				return FALSE;
+			}
+			else
+			{
+				$filename = $data;
+				unset( $data );
+				$data['full_path'] = $filename;
+				$data['raw_name'] = pathinfo($filename, PATHINFO_FILENAME);
+				$data['file_ext'] = pathinfo($filename, PATHINFO_EXTENSION);
+			}
+		}
+		
 		$CI =& get_instance();
 		$CI->load->library('image_lib');
 
