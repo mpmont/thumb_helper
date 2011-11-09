@@ -65,13 +65,18 @@ example:
 
 **CHANGELOG**
 
-**version 1.0.1**
+**version 1.0**
 
 * Resize image after upload with image data;
 
 * Use just width or both width and height;
 
 * Return information about the thumbnail (path / thumb_marker / thumb_name )
+
+
+**version 1.0.1**
+
+* Resize image from remote file;
 
 ***
 
