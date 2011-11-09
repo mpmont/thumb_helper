@@ -28,7 +28,7 @@ Info on $image_data:
 
 More information about this here: [Codeigniter/user_guide/libraries/file_uploading](http://codeigniter.com/user_guide/libraries/file_uploading.html)
 
-For now you can pass 3 params to the thumb helper: 
+For now you can pass 4 params to the thumb helper: 
 
 1. Image data from upload;
 
@@ -36,9 +36,11 @@ For now you can pass 3 params to the thumb helper:
 
 3. Height
 
+4. Destination path
+
 like this:
 
-`create_thumb($image_data, '100', '150');`
+`create_thumb($image_data, '100', '150', '.public/images/thumbs/');`
 
 Keep in mind that the 3rd param is optional. If only two params are passed to the thumb helper the thumb will resize the image maintaining the ratio. If theres a 3rd param the ratio will be equal to FALSE.
 
@@ -65,6 +67,13 @@ example:
 
 **CHANGELOG**
 
+**version 1.0.1**
+
+* Resize image from remote file;
+
+* Added possibility to choose a different destination path;
+
+
 **version 1.0**
 
 * Resize image after upload with image data;
@@ -73,13 +82,8 @@ example:
 
 * Return information about the thumbnail (path / thumb_marker / thumb_name )
 
-
-**version 1.0.1**
-
-* Resize image from remote file;
-
 ***
 
 **FUTURE FEATURES**
 
-* Pass a destination folder;
+* Create crop functions;

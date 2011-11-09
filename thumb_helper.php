@@ -22,12 +22,13 @@
  * @param	array || string		array of data for the THUMB (just send the image data from upload) || pass the path with filename
  * @param	string				width px => required
  * @param	string				heigh px => optional (if set maintain_ratio = FALSE)
+ * @param 	string 				destination path
  * @return	string  			Filename
  */
  
 if ( ! function_exists('thumb_helper'))
 {
-	function create_thumb( $data = array() , $thumb_width = '', $thumb_height = '' )
+	function create_thumb( $data = array() , $thumb_width = '', $thumb_height = '', $destination = '' )
 	{
 
 		if( is_array($data) )
@@ -83,8 +84,13 @@ if ( ! function_exists('thumb_helper'))
 			$config['width'] = $thumb_width;
 			$config['height'] = $thumb_height;
 		}
+		if ( $destination != '' )
+		{
+			$config['new_image'] = $destination; 
+		}
 
 		$CI->image_lib->initialize( $config );
+		
 		if ( ! $CI->image_lib->resize() )
 		{
 			return FALSE;
