@@ -26,7 +26,7 @@
  * @return	string  			Filename
  */
  
-if ( ! function_exists('thumb_helper'))
+if ( ! function_exists('create_thumb'))
 {
 	function create_thumb( $data = array() , $thumb_width = '', $thumb_height = '', $destination = '' )
 	{
