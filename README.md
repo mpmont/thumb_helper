@@ -38,11 +38,14 @@ For now you can pass 4 params to the thumb helper:
 
 4. Destination path
 
+5. Maintain Aspect Ratio
+
+
 like this:
 
-`create_thumb($image_data, '100', '150', '.public/images/thumbs/');`
+`create_thumb($image_data, '100', '150', '.public/images/thumbs/', TRUE);`
 
-Keep in mind that the 3rd param is optional. If only two params are passed to the thumb helper the thumb will resize the image maintaining the ratio. If theres a 3rd param the ratio will be equal to FALSE.
+Keep in mind that the 3rd param is optional. If only two params are passed to the thumb helper the thumb will resize the image maintaining the ratio. If theres a 3rd param then, by default the aspect ratio will not be maintained unless the 5th parameter is set to TRUE.
 
 After the creation the thumb helper will return an array with the following content:
 
@@ -67,6 +70,12 @@ example:
 
 **CHANGELOG**
 
+**version 1.0.2**
+
+* Formed from original Source
+
+* Added explicit option for maintaining aspect ratio
+
 **version 1.0.1**
 
 * Resize image from remote file;
@@ -78,7 +87,7 @@ example:
 
 * Resize image after upload with image data;
 
-* Use just width or both width and height;
+* Use just width or both width ad height;
 
 * Return information about the thumbnail (path / thumb_marker / thumb_name )
 
@@ -87,3 +96,7 @@ example:
 **FUTURE FEATURES**
 
 * Create crop functions;
+
+**CREDITS**
+
+* Original code formed from https://github.com/mpmont/thumb_helper

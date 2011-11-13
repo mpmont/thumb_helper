@@ -28,7 +28,7 @@
  
 if ( ! function_exists('create_thumb'))
 {
-	function create_thumb( $data = array() , $thumb_width = '', $thumb_height = '', $destination = '' )
+	function create_thumb( $data = array() , $thumb_width = '', $thumb_height = '', $maintain_ratio = FALSE $destination = '')
 	{
 
 		if( is_array($data) )
@@ -79,7 +79,11 @@ if ( ! function_exists('create_thumb'))
 		}
 		else
 		{
-			$config['maintain_ratio'] = FALSE;
+			if ($maintain_ratio == TRUE) {
+				$config['maintain_ratio'] = TRUE;
+			} else {
+				$config['maintain_ratio'] = FALSE;
+			}
 			$config['thumb_marker'] = '_'.$thumb_width.'x'.$thumb_height;
 			$config['width'] = $thumb_width;
 			$config['height'] = $thumb_height;
