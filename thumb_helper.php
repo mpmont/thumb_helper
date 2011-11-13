@@ -10,7 +10,7 @@
  * @category	Helpers
  * @author		Marco Monteiro
  * @link		www.marcomonteiro.net
- * @version 	1.0.1
+ * @version 	1.0.2
  */
 
 // ------------------------------------------------------------------------
@@ -23,12 +23,13 @@
  * @param	string				width px => required
  * @param	string				heigh px => optional (if set maintain_ratio = FALSE)
  * @param 	string 				destination path
+ * @param   boolean             maintain aspect ratio
  * @return	string  			Filename
  */
  
 if ( ! function_exists('create_thumb'))
 {
-	function create_thumb( $data = array() , $thumb_width = '', $thumb_height = '', $maintain_ratio = FALSE $destination = '')
+	function create_thumb( $data = array() , $thumb_width = '', $thumb_height = '', $destination = '', $maintain_ratio = FALSE)
 	{
 
 		if( is_array($data) )

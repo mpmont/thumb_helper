@@ -72,9 +72,7 @@ example:
 
 **version 1.0.2**
 
-* Formed from original Source
-
-* Added explicit option for maintaining aspect ratio
+* Added explicit option for maintaining aspect ratio when height and width are both specified
 
 **version 1.0.1**
 
@@ -96,7 +94,3 @@ example:
 **FUTURE FEATURES**
 
 * Create crop functions;
-
-**CREDITS**
-
-* Original code formed from https://github.com/mpmont/thumb_helper
