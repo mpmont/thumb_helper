@@ -104,7 +104,7 @@ if ( ! function_exists('create_thumb'))
 		$result = array(
 			'path' => $data['full_path'],
 			'thumb_marker' => $config['thumb_marker'],
-			'thumb_name' => $data['raw_name'].'_'.$config['thumb_marker'].$data['file_ext']
+			'thumb_name' => $data['raw_name'].$config['thumb_marker'].$data['file_ext']
 		);
 
 		$CI->image_lib->clear();
