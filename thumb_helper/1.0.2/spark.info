@@ -1,5 +1,5 @@
 # This is the spark-sdk specification. It's in a magical format called YAML.
-#  Use this format while developing your own sparks!
+# Use this format while developing your own sparks!
 
 # This is the spark name. This should be the registered name of the spark.
 # It is here for informational purposes only.
@@ -17,3 +17,6 @@ compatibility: 2.1.0
 #dependencies:
 #  some-spark-1: 1.0.0
 #  some-other-spark-2: 1.0.0
+
+# These are tags to associate your spark with
+tags: ["helper", "thumb", "image resize"]
